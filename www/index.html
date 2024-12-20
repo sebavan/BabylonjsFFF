@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Babylon.js FFF</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/favicon.ico">
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: #2a2342; 
+            color: #ffffff;
+            font-family: Tahoma, "Trebuchet MS", sans-serif;
+        }
+
+        #renderCanvas {
+            width: 1024px;
+            height: 1024px;
+            display: block;
+            font-size: 0;
+            margin: auto;
+            border:none !important;
+            outline:none !important;
+            background-color: black;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto 230px 494px 300px auto;
+            grid-template-rows: 80px 1024px 80px;
+        }
+
+        .headerLogo {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            background-color: #201936;
+        }
+
+        .headerLogo > a > img {
+            width: auto;
+            height: 80px;
+            margin-left: 10px;
+        }
+
+        .headerText {
+            grid-column-start: 3;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            font-size: 35px;
+            line-height: 80px;
+            text-align: center;
+            background-color: #201936;
+        }
+
+        .headerTitle {
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+            font-size: 31px;
+            line-height: 80px;
+            text-align: center;
+            background-color: #BB464B;
+        }
+
+        .content {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        .footer {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+
+        a {
+            color: #FFFFFF;
+            text-decoration: unset;
+        }
+        a:hover {
+            color: #FFFFFF;
+        }
+        a:visited {
+            color: #FFFFFF;
+        }
+        a:focus {
+            color: #FFFFFF;
+        }
+
+        .headerTitle a {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #201936;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .footer a,
+        .footer a:visited {
+            color: #BB464B;
+            text-decoration: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="headerLogo">
+            <a href="https://www.babylonjs.com" title="Babylon.js" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/logo.svg" alt="logo"></img>
+            </a>
+        </div>
+        <div class="headerText">
+            <a href="https://www.babylonjs.com">
+                Fast First Frame
+            </a>
+        </div>
+        <div class="headerTitle" id="headerTitle">
+            Loading...
+        </div>
+        <div class="content">
+            <canvas id="renderCanvas" width="1024" height="1024"></canvas>
+        </div>
+        <div class="footer">
+            <p>
+                Find the sources of the project <a href=https://github.com/sebavan/BabylonjsFFF">Github</a>.
+            </p>
+        </div>
+    <div>
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

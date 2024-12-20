@@ -1,0 +1,60 @@
+{
+    "name": "@babylonjs/fff",
+    "version": "1.0.0",
+    "description": "Babylonjs fff demoes a fast first frame experience.",
+    "author": {
+        "name": "Sebastien Vandenberghe"
+    },
+    "contributors": [
+        "Sebastien Vandenberghe"
+    ],
+    "keywords": [
+        "babylonjs",
+        "3D",
+        "javascript",
+        "html5",
+        "webgl",
+        "webgl2",
+        "webgpu",
+        "babylon"
+    ],
+    "license": "MIT",
+    "readme": "README.md",
+    "typings": "dist/src/index.d.ts",
+    "main": "dist/src/index.js",
+    "files": [
+        "dist/src/**",
+        "README.md",
+        "LICENSE"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sebavan/BabylonjsFFF"
+    },
+    "scripts": {
+        "build": "npx webpack --config webpack.prod.js",
+        "start": "npx webpack-dev-server --open --config webpack.dev.js",
+        "prod": "npx webpack --config webpack.prod.js && npx http-server ./www",
+        "analyze": "npx webpack --config webpack.prod.js --stats --profile --json www/scripts/webpack-stats.json && npx webpack-bundle-analyzer www/scripts/webpack-stats.json"
+    },
+    "dependencies": {
+        "@babylonjs/core": "^7.40.1"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^8.16.0",
+        "@typescript-eslint/parser": "^8.16.0",
+        "clean-webpack-plugin": "^4.0.0",
+        "eslint": "^9.15.0",
+        "eslint-webpack-plugin": "^4.2.0",
+        "file-loader": "^6.2.0",
+        "raw-loader": "^4.0.2",
+        "source-map-loader": "^5.0.0",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.5.0",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0",
+        "webpack-merge": "^6.0.1",
+        "webpack-bundle-analyzer": "^4.10.2"
+    }
+}
