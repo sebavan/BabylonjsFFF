@@ -3,6 +3,8 @@ import { EffectRenderer } from "@babylonjs/core/Materials/effectRenderer";
 import { MaskEffect } from "./maskEffect";
 import { CircleEffect } from "./circleEffect";
 import { ThinTexture } from "@babylonjs/core/Materials/Textures/thinTexture";
+import { PerfCounter } from "@babylonjs/core/Misc/perfCounter";
+import "@babylonjs/core/Engines/Extensions/engine.query";
 
 import { ensureImageElementLoadedAsync } from "../utils/textureUtils";
 
@@ -13,6 +15,7 @@ export class MainEffect {
     private readonly _maskEffect: MaskEffect;
     private readonly _circleEffect: CircleEffect;
     private readonly _maskTexture: ThinTexture;
+    private readonly _stats: PerfCounter;
 
     constructor(context: WebGL2RenderingContext, maskImage: HTMLImageElement) {
         this._engine = new ThinEngine(context, false, { 
@@ -29,6 +32,9 @@ export class MainEffect {
         this._maskTexture = new ThinTexture(null);
         this._maskTexture.wrapU = 2;
         this._maskTexture.wrapV = 2;
+
+        this._engine.captureGPUFrameTime(true);
+        this._stats = this._engine.getGPUFrameTimeCounter()!;
     }
 
     public async ensureReadyAsync(): Promise<void> {
@@ -51,6 +57,10 @@ export class MainEffect {
             this._circleEffect.render();
             this._maskEffect.render(this._maskTexture, this._circleEffect.circleTexture);
         });
+
+        setInterval(() => {
+            console.log("gpu time", this._stats.lastSecAverage, "ns");
+        }, 1000);
     }
 
     dispose() {

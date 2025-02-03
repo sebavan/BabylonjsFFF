@@ -38,7 +38,7 @@
         "analyze": "npx webpack --config webpack.prod.js --stats --profile --json www/scripts/webpack-stats.json && npx webpack-bundle-analyzer www/scripts/webpack-stats.json"
     },
     "dependencies": {
-        "@babylonjs/core": "^7.40.1"
+        "@babylonjs/core": "^7.47.2"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^8.16.0",
